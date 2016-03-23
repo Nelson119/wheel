@@ -10,7 +10,7 @@
 
 $(function(){
 
-	var stages = ['index', 'legal', 'wheel', 'fill'];
+	var stages = ['index', 'legal', 'wheel', 'email', 'sms', 'thankyou', 'coupon'];
 
 	$.each(stages, function(i, s){
 		$('.btn-' + s).on('click', function(){
@@ -38,13 +38,21 @@ $(function(){
 
 		var rotate = (360 / count * pick * direction);
 		rotate += 360 * Math.round(Math.random() * 15 + 5) * direction;
-		TweenMax.to('.wheel-content .wheel figure .wheel-background, .wheel figure ul', 25,{
+		TweenMax.to('.wheel-content .wheel figure .wheel-background, .wheel figure ul', 8,{
 		  rotationZ: rotate,
-		  ease: Elastic. easeOut.config( 1, 0.8),
+		  ease: Elastic. easeOut.config( 0.6, 0.8),
 		  onComplete: function(){
-		  	$('.btn-fill').removeClass('hide').addClass('in');
+		  	$('.btn-thankyou').removeClass('hide').addClass('in');
 		  }
 		});
 
 	});
+
+	$('#expired').countdown('2016/05/01', function(event) {
+		var weeks = event.strftime('%w') * 1;
+		var days = event.strftime('%d') * 1;
+		var total = weeks * 7 + days;
+		$(this).html(event.strftime(total + ' : %H : %M : %S'));
+	});
+
 });

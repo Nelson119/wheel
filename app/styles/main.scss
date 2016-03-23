@@ -32,6 +32,7 @@ $main-font: 'Open Sans';
 
 /* Space out content a bit */
 body {
+  font-family: 'Open Sans','Noto Sans TC','Lantinghei','微軟正黑體' !important;
   .Open-Sans-bold-700 {
     font-family: 'Open Sans','Noto Sans TC','Lantinghei','微軟正黑體' !important;
     font-style: normal;
@@ -226,8 +227,9 @@ body {
     height: vw320(330);
     figure{
       display: inline-block;
-      width: vw320(303);
-      height: vw320(303);
+      width: vw320(299.25);
+      height: vw320(299.25);
+      position: relative;
       transform-origin: center center 1px;
       aside.wheel-background{
         position:absolute;
@@ -254,15 +256,15 @@ body {
         height: 100%;
         li{
           position:absolute;
-          top:vw320(80);
-          left:vw320(165);
+          top:vw320(50);
+          left:vw320(155);
           font-size: vw320(13.88);
-          transform-origin: vw320(-5) vw320(85) 1px;
+          transform-origin: vw320(-6) vw320(100) 1px;
         }
       }
       &.item-3{
         aside.wheel-background .preset{
-          transform: rotateZ(-120deg);
+          // transform: rotateZ(-120deg);
           background-image: url(../images/wheel/wheel_3.svg);
         }
         ul{
@@ -280,7 +282,7 @@ body {
       &.item-4{
         aside.wheel-background .preset{
           background-image: url(../images/wheel/wheel_4.svg);
-          transform: rotateZ(0);
+          // transform: rotateZ(0);
         }
         ul{
           li:nth-child(2){
@@ -300,7 +302,7 @@ body {
       &.item-5{
         aside.wheel-background .preset{
           background-image: url(../images/wheel/wheel_5.svg);
-          transform: rotateZ(-360deg / 5 * 3);
+          // transform: rotateZ(-360deg / 5 * 3);
         }
         ul{
           li:nth-child(2){
@@ -323,7 +325,7 @@ body {
       &.item-6{
         aside.wheel-background .preset{
           background-image: url(../images/wheel/wheel_6.svg);
-          transform: rotateZ(0);
+          // transform: rotateZ(0);
         }
         ul{
           li:nth-child(2){
@@ -349,7 +351,7 @@ body {
       &.item-7{
         aside.wheel-background .preset{
           background-image: url(../images/wheel/wheel_7.svg);
-          transform: rotateZ(-360deg / 7 * 2);
+          // transform: rotateZ(-360deg / 7 * 2);
         }
         ul{
           li:nth-child(2){
@@ -378,7 +380,7 @@ body {
       &.item-8{
         aside.wheel-background .preset{
           background-image: url(../images/wheel/wheel_8.svg);
-          transform: rotateZ(-360deg / 8 * 4);
+          // transform: rotateZ(-360deg / 8 * 4);
         }
         ul{
           li:nth-child(2){
@@ -432,6 +434,7 @@ body {
   opacity: 0;
   overflow: hidden;
   position:absolute;
+  min-height: 100vh;
   left:0;
   background: rgba(0,0,0,0.8);
   box-shadow: vw320(6) vw320(9) vw320(18);
@@ -452,7 +455,125 @@ body {
     }
   }
 }
-
+.coupon-content{
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.45s opacity 0s, 0s height 0.45s;
+  background-image: url(../images/wheel/wheel-background.png);
+  font-size:vw320(10);
+  font-weight: lighter;
+  .coupon-head{
+    margin:0 auto 0;
+    background-image:url(../images/coupon/coupon-background-head.png);
+    background-size:100% auto;
+    height: vw320(339);
+    width: vw320(292);
+    .logo{
+      height: vw320(65);
+      img{
+        height: percentage(45/65);
+      }
+    }
+  }
+  .coupon-mid{
+    margin:0 auto 0;
+    background-image:url(../images/coupon/coupon-background.png);
+    background-size:100% auto;
+    height: auto;
+    width: vw320(292);
+    padding:vw320(20) vw320(60);
+  }
+  .coupon-butt{
+    padding-top: vw320(90);
+    margin:0 auto 0;
+    background-image:url(../images/coupon/coupon-background-butt.png);
+    background-size:100% auto;
+    height: vw320(349);
+    width: vw320(292);
+  }
+  .coupon-text{
+    margin-top:vw320(80);
+    span{
+      display: block;
+      line-height: 1.05;
+      white-space: nowrap;
+      &:nth-child(1){
+        font-size: vw320(20.38);
+      }
+      &:nth-child(2){
+        font-size: vw320(26.31);
+      }
+      &:nth-child(3){
+        font-size: vw320(18.42);
+      }
+    }
+  }
+  .qrcode{
+    width: 100%;
+    position:relative;
+    margin-top: 35px;
+    &:after{
+      background:url(../images/coupon/qrcode-background.png) no-repeat;
+      height: vw320(10);
+      width: 100%;
+      position:absolute;
+      top:0;
+      left: 50%;
+      margin-left: vw320(-38);
+      background-size:vw320(78);
+      content:'';
+    }
+    img{
+      width: vw320(78);
+    }
+  }
+  h3{
+    margin:0 0 vw320(10);
+    font-size: vw320(14);
+  }
+  ol{
+    padding-left:vw320(25);
+    padding-right:vw320(25);
+    padding-bottom:vw320(10);
+    li{
+      list-style: decimal;
+      padding-bottom:vw320(5);
+    }
+  }
+  p{
+    margin:0 0 vw320(10);
+  }
+  .mappin{
+    width: vw320(13);
+    margin-right: vw320(5);
+    display: inline-block;
+  }
+  .address{
+    >span{
+      display: inline-block;
+      width: calc(100% - 8vw);
+    }
+  }
+  .counter{
+    margin-top:0;
+    font-size: vw320(20);
+    word-spacing: vw320(5);
+    padding-left: vw320(5);
+  }
+  .functions{
+    margin-top: vw320(125);
+    letter-spacing: vw320(68);
+    padding-left: vw320(5);
+    a{
+      width: vw320(35);
+      display: inline-block;
+      img{        
+        max-width: 100%;
+      }
+    }
+  }
+}
 .form-content{
   background-image: url(../images/wheel/wheel-background.png);
   height: 0;
@@ -486,12 +607,15 @@ body {
       }
       .functions{
         height: vw320(315);
-        button{
+        a{
           background: none;
           border:0;
           padding:0;
           margin:0;
           opacity: .96;
+          img{
+            width: vw320(117);
+          }
           &:hover,&:focus,&:active{
             opacity: 1;
           }
@@ -533,7 +657,7 @@ body {
       }
       .functions{
         height: vw320(315);
-        button{
+        a{
           background: none;
           border:0;
           padding:0;
@@ -541,6 +665,9 @@ body {
           opacity: .96;
           &:hover,&:focus,&:active{
             opacity: 1;
+          }
+          img{
+            width: vw320(117);
           }
         }
       }
@@ -602,6 +729,7 @@ body{
     .wheel-content{
       padding-top: vw320(40);
       height: vw320(430);
+      min-height:100vh;
       opacity: inherit;
       transition: 0.45s opacity 0s, 0s height 0.45s;
     }
@@ -623,7 +751,25 @@ body{
       }
     }
   }
-  &.fill{
+  &.coupon{
+    .coupon-content{
+      padding-top: vw320(40);
+      height: auto;
+      padding-bottom:vw320(20);
+      min-height:100vh;
+      opacity: inherit;
+      transition: 0.45s opacity 0s, 0s height 0s;
+      .functions{
+        height: vw320(39);
+        a{
+          img{
+            width: vw320(77);
+          }
+        }
+      }
+    }
+  }
+  &.email{
     .form-content{
       opacity: 1;
       height: auto;
@@ -631,7 +777,7 @@ body{
       transition: 0.45s opacity 0s, 0s height 0s;
     }
   }
-  &.fill-sms{
+  &.sms{
     .form-sms-content{
       opacity: 1;
       height: auto;
