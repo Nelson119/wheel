@@ -42,13 +42,13 @@ $(function(){
 		  rotationZ: rotate,
 		  ease: Elastic. easeOut.config( 0.6, 0.8),
 		  onComplete: function(){
-		  	$('.btn-thankyou').removeClass('hide').addClass('in');
+		  	$('.btn-coupon').removeClass('hide').addClass('in');
 		  }
 		});
 
 	});
-
-	$('#expired').countdown('2016/05/01', function(event) {
+	var expiration = $('#expired').attr('data-expiration');
+	$('#expired').countdown(expiration, function(event) {
 		var weeks = event.strftime('%w') * 1;
 		var days = event.strftime('%d') * 1;
 		var total = weeks * 7 + days;
