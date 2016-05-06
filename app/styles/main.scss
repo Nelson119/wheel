@@ -573,6 +573,60 @@ body {
       }
     }
   }
+  .counter-label{
+    position:absolute;
+    top:vw320(912);
+    left:vw320(47);
+    color:#fff;
+    font-size: vw320(12);
+  }
+  .counter-label-day,
+  .counter-label-hour,
+  .counter-label-min,
+  .counter-label-sec{
+    position:absolute;
+    top:vw320(966);
+    left:vw320(83);
+    color: inherit;
+    font-size: vw320(10);
+    font-weight: normal;
+
+  }
+  .counter-label-hour{
+    left:vw320(126);
+  }
+  .counter-label-min{
+    left:vw320(176);
+  }
+  .counter-label-sec{
+    left:vw320(223);
+  }
+  .save-label{
+    position:absolute;
+    color:#DB3D3D;
+    top:vw320(1048);
+    left:vw320(74);
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: vw320(14);
+  }
+  .save-label-email{
+    position:absolute;
+    top:vw320(1077);
+    left:vw320(74);
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: vw320(11);
+
+  }
+  .save-label-sms{
+    position:absolute;
+    top:vw320(1077);
+    left:vw320(185);
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: vw320(11);
+  }
 }
 .form-content{
   background-image: url(../images/wheel/wheel-background.png);
@@ -594,15 +648,38 @@ body {
       width: vw320(292);
       height: vw320(370);
       display: inline-block;
-      input{
+      .caption{
+        font-size: vw320(14);
+        color: #DB3D3D;
+        position:absolute;
+        top: vw320(186);
+        left: vw320(148);
+
+      }
+      .input-label{
+        position:absolute;
+        top: vw320(246);
+        left: vw320(66);
+      }
+      .input{
         position:absolute;
         top: vw320(280);
+        left: vw320(110);
+        &:before{
+          content: attr(title);
+          font-size: vw320(10);
+          // border: 1px solid currentColor;
+          margin-left: vw320(-62);
+        }
+      }
+      input{
+        position:absolute;
+        top: vw320(-5);
+        left: 0;
         background: rgba(0, 0, 0, 0);
         border: 0;
         height: vw320(27);
-        left: vw320(110);
         position: absolute;
-        top: vw320(276);
         width: vw320(150);
       }
       .functions{
@@ -644,15 +721,38 @@ body {
       width: vw320(292);
       height: vw320(370);
       display: inline-block;
-      input{
+      .caption{
+        font-size: vw320(14);
+        color: #DB3D3D;
+        position:absolute;
+        top: vw320(186);
+        left: vw320(148);
+
+      }
+      .input-label{
+        position:absolute;
+        top: vw320(246);
+        left: vw320(66);
+      }
+      .input{
         position:absolute;
         top: vw320(280);
+        left: vw320(110);
+        &:before{
+          content: attr(title);
+          font-size: vw320(10);
+          // border: 1px solid currentColor;
+          margin-left: vw320(-62);
+        }
+      }
+      input{
+        position:absolute;
+        top: vw320(-5);
+        left: 0;
         background: rgba(0, 0, 0, 0);
         border: 0;
         height: vw320(27);
-        left: vw320(110);
         position: absolute;
-        top: vw320(276);
         width: vw320(150);
       }
       .functions{
