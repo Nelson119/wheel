@@ -781,6 +781,33 @@ body {
   height: 0;
   overflow: hidden;
   opacity: 0;
+  .caption
+  ,.facebook-caption
+  ,.location-caption
+  ,.expiration-caption
+  ,.more-caption{
+    font-size: vw320(12);
+    color: #DB3D3D;
+    height: vw320(27);
+    position: absolute;
+    top: vw320(118);
+    left: vw320(65);
+    width: vw320(185);
+    text-align: left;
+    line-height: 2em;
+  }
+  .facebook-caption{
+    top: vw320(187);
+  }
+  .location-caption{
+    top: vw320(258);
+  }
+  .expiration-caption{
+    top: vw320(330);
+  }
+  .more-caption{
+    top: vw320(375);
+  }
   .logo{
     height: vw320(55);
     img{
